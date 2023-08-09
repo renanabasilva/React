@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import HelloWorld from './components/HelloWorld';
+import SayMyName from './components/SayMyName';
+import Pessoa from './components/Pessoa';
 
 function App() {
+  const name = 'Renan'
+
+  function sum(a, b) {
+    return a + b
+  }
+
+  const url = 'https://via.placeholder.com/150'
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Soma: {sum(1, 2)}</p>
+      <img src={url} alt="Minha imagem" />
+      <HelloWorld />
+      <SayMyName nome={name} />
+      <Pessoa
+        nome="Renan"
+        idade="31"
+        profissao="Programador"
+        foto="https://via.placeholder.com/150"
+      />
     </div>
   );
 }
 
-export default App;
+export default App;  
