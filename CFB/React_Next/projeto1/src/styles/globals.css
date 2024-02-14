@@ -8,6 +8,13 @@
 
 }
 
+.btnPadrao {
+  display: flex;
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 10px;
+}
+
 /* @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -81,7 +81,10 @@ export default function produtosPagina() {
                 valor={e.valor}
                 desconto={e.desconto}
                 funcao={calcDescDir}
-              />
+              >
+                <div>Curso React Next</div>
+                <div>Renan Aba</div>
+              </Card>
             );
           }
         })}

@@ -3,6 +3,7 @@ interface CardProps{
   valor: number,
   desconto: number,
   funcao: any,
+  children: any,
 }
 
 export default function Card(props:CardProps) {
@@ -13,7 +14,8 @@ export default function Card(props:CardProps) {
       {props.desconto? (props.desconto < 1? <div>Desconto: {props.desconto * 100}% - R${(props.valor * props.desconto).toFixed(2)}</div> : <div>Desconto: R$ {props.desconto}</div>) : null}
       {/* {props.desconto? <div>Valor c/ desconto: R${(props.valor - (props.valor * props.desconto)).toFixed(2)}</div> : <div/>} */}
       <div>{props.desconto? `Valor c/ desconto: R$ ${(props.funcao(props.valor, props.desconto).toFixed(2))}`: <div/>}</div>
-      {!!props.desconto && (<div> Desconto incluso</div>) /* RENDERIZAÇÃO CONDICIONAL && // NEGAÇÃO DUPLA PARA TORNAR O TESTE LÓGICO BOOLEANO*/}    
+      {!!props.desconto && (<div> Desconto incluso</div>) /* RENDERIZAÇÃO CONDICIONAL && // NEGAÇÃO DUPLA PARA TORNAR O TESTE LÓGICO BOOLEANO*/}   
+       <div>{props.children[0]}</div>
     </div>
   )
 }

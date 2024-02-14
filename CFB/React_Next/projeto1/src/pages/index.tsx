@@ -1,7 +1,7 @@
 //import Image from "next/image";
 //import { Inter } from "next/font/google";
 import Topo from "@/components/Topo";
-import Card from "@/components/Card";
+// import Card from "@/components/Card";
 
 // const inter = Inter({ subsets: ["latin"] });
 
