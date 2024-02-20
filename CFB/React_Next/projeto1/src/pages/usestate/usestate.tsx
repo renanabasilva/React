@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DisplayState from "@/components/DisplayState";
+import Topo from "@/components/Topo"
 
 // const usestate = () => {
 
@@ -8,6 +9,7 @@ export default function usestate() {
 
   return (
     <div>
+      <Topo/>
       useState
       <DisplayState valor={cont} fvalor={setCont}></DisplayState>
     </div>

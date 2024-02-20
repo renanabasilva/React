@@ -8,9 +8,10 @@ interface DisplayStateProps{
 export default function DisplayState(props:DisplayStateProps){
 
   function operacao (op:number){
-    let c = props.valor
-    c+= op
-    props.fvalor(c)
+    // let c = props.valor
+    // c+= op
+    // props.fvalor(c)
+    props.fvalor((prevCount: number) => prevCount + op);
   }
 
   return (
