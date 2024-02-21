@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react"
 import Topo from "@/components/Topo"
-import { useState } from "react"
+import Globais from "@/components/Globais"
+import useeffect from "../useeffect/useeffect"
 
 const cursos = ["", "HTML", "CSS", "Javascript", "React", "C++", "Arduino"]
 
@@ -18,6 +20,10 @@ export default function inputs() {
 
   const [nome, setNome] = useState<string>('')
   const [curso, setCurso] = useState<string>('')
+
+  useEffect(() => {
+    Globais.curso="React"
+  },[])
 
   function fcursos (){
     return (
@@ -79,6 +85,11 @@ export default function inputs() {
       </div>
       <div> Nome digitado: {nome}</div>
       <div> Curso escolhido: {curso}</div>
+      <div>
+        <p>{Globais.curso}</p>
+        <p>{Globais.canal}</p>
+        <p>{Globais.ano}</p>
+      </div>
     </div>
   )
 }
