@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Topo from "@/components/Topo"
 import Globais from "@/components/Globais"
 
-export default function useeffect() {
+export default function Useeffect() {
   
   const [cont, setCont] = useState<number>(0)
   const [aux, setAux] = useState<number>(0)

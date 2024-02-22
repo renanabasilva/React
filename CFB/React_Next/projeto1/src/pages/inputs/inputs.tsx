@@ -16,7 +16,7 @@ const jcursos = [
   {"curso":"Arduino"}
 ]
 
-export default function inputs() {
+export default function Inputs() {
 
   const [nome, setNome] = useState<string>('')
   const [curso, setCurso] = useState<string>('')

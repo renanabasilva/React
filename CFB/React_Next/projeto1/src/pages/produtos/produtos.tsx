@@ -55,7 +55,7 @@ function calcDescDir(v: number, d?: number) {
   return d ? v - d : v;
 }
 
-export default function produtosPagina() {
+export default function ProdutosPagina() {
   const router = useRouter();
   // const parametros = router.query;
   // const nome = parametros.nome;

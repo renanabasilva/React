@@ -26,7 +26,7 @@ export default function Topo() {
         <Link href={"/usestate/usestate"}>useState</Link>
         <Link href={"/useeffect/useeffect"}>useEffect</Link>
         <Link href={"/inputs/inputs"}>Inputs</Link>
-        <Link href={"/filtragem/filtragem"}>filtragem</Link>
+        <Link href={"/filtragem/filtragem"}>Filtragem</Link>
       </menu>
       {/* <Card/> */}
     </div>
