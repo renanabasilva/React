@@ -1,6 +1,7 @@
 import './Banner.css';
 
-function Banner() {
+// function Banner() {
+export const Banner = () => {
 
   return (
     <header className="banner">
@@ -9,4 +10,4 @@ function Banner() {
   )
 }
 
-export default Banner
+// export default Banner
