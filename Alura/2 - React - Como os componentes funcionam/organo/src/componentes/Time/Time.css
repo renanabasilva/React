@@ -1,8 +1,15 @@
 .time {
+  position: relative;
   text-align: center;
   padding: 32px;
   /* background-image: url(/public/imagens/fundo.png); */
   /* background-blend-mode: multiply; */
+}
+
+.time .input-color {
+  position: absolute;
+  top: 20px;
+  right: 50px;
 }
 
 .time h3 {
