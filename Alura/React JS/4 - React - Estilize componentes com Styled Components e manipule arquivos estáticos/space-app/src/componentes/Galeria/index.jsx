@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Titulo from "../Titulo"
 import Populares from "./Populares.index"
 import Tags from "./Tags"
+import Imagem from "./Imagem"
 
 const GaleriaContainer = styled.div`
   display: flex;
@@ -18,9 +19,17 @@ const Galeria = ({ fotos = [] }) => {
       <GaleriaContainer>
           <SecaoFluida>
             <Titulo>Navegue pela galeria</Titulo>
-            <ul>
-            {fotos.map( foto => foto.titulo)}
-            </ul>
+            {fotos.map( 
+              foto => <Imagem
+                key={foto.id}
+                // foto={foto}
+                titulo={foto.titulo}  
+                fonte={foto.fonte}  
+                path={foto.path}  
+                id={foto.id}  
+                tagId={foto.tagId}  
+              />
+            )}
           </SecaoFluida>
           <Populares/>
       </GaleriaContainer>

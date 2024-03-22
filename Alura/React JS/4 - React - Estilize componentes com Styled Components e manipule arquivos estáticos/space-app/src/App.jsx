@@ -23,7 +23,6 @@ const AppContainer = styled.div`
 
 const MainContainer = styled.main`
   display: flex;
-  align-items: center;
   gap: 24px;
 `
 
