@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import BotaoIcone from "../../BotaoIcone";
 
 
 const Figure = styled.figure`
@@ -46,11 +47,7 @@ const Rodape = styled.footer`
   align-items: center;
 `
 
-const Button = styled.button`
-  
-`
-
-const Imagem = ({ titulo, fonte, path, id, tagId, expandida = false }) => {
+const Imagem = ({ foto, titulo, fonte, path, id, tagId, expandida = false, aoZoomSolicitado }) => {
   return (
     <Figure $expandida={expandida} id={`foto-${id}`}>
       <img src={path} alt={titulo} />
@@ -58,8 +55,12 @@ const Imagem = ({ titulo, fonte, path, id, tagId, expandida = false }) => {
         <h3>{titulo}</h3>  
         <Rodape>
           <h4>{fonte}</h4>
-          <Button>Favorito</Button>
-          <Button>Expandir</Button>
+          <BotaoIcone>
+            <img src="/icones/favorito.png" alt="Icone de favorito" />
+          </BotaoIcone>
+          {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+            <img src="/icones/expandir.png" alt="Icone de expandir" />
+          </BotaoIcone>}
         </Rodape>
       </figcaption>
     </Figure>
