@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Titulo from "../Titulo"
-import Populares from "./Populares.index"
+import Populares from "./Populares"
 import Tags from "./Tags"
 import Imagem from "./Imagem"
 
@@ -20,7 +20,7 @@ const ImagensContainer = styled.section`
   gap: 24px;
 `
 
-const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlternarFavorito }) => {
   return(
     <>
       <Tags />
@@ -31,6 +31,7 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
               {fotos.map( 
                 foto => <Imagem
                   aoZoomSolicitado={aoFotoSelecionada}
+                  aoAlternarFavorito={aoAlternarFavorito}
                   key={foto.id}
                   foto={foto}
                   titulo={foto.titulo}  

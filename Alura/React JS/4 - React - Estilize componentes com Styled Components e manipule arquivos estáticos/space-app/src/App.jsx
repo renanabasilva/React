@@ -8,6 +8,7 @@ import bgimg from "./assets/banner.png"
 import Galeria from "./componentes/Galeria"
 import fotos from "./fotos.json"
 import ModalZoom from "./componentes/ModalZoom"
+import Rodape from "./componentes/Rodape"
 
 
 const FundoGradiente = styled.div`
@@ -36,6 +37,22 @@ const ConteudoGaleria = styled.section`
 const App = () => {
   const [fotosGaleria, setFotosGaleria] = useState(fotos)
   const [fotoSelecionada, setFotoSelecionada] = useState(null)
+
+  const aoAlternarFavorito = (foto) => {
+    if (foto.id === fotoSelecionada?.id) {
+      setFotoSelecionada({
+        ...fotoSelecionada,
+        favorita: !fotoSelecionada.favorita
+      })
+    }
+    setFotosGaleria(fotosGaleria.map( fotoDaGaleria => {
+      return {
+        ...fotoDaGaleria,
+        favorita: fotoDaGaleria.id === foto.id ? !fotoDaGaleria.favorita : fotoDaGaleria.favorita
+      }
+    }))
+  }
+
   return (
     <FundoGradiente>
       <EstilosGlobais />
@@ -47,12 +64,18 @@ const App = () => {
               <Banner texto="A galeria mais completa de fotos do espaço!" backgroundImage={bgimg}/>
               <Galeria 
                 aoFotoSelecionada={foto => setFotoSelecionada(foto)} 
+                aoAlternarFavorito={aoAlternarFavorito}
                 fotos={fotosGaleria}
               />
             </ConteudoGaleria>
           </MainContainer>
         </AppContainer>
-        <ModalZoom foto={fotoSelecionada} />
+        <ModalZoom 
+          foto={fotoSelecionada} 
+          aoFechar={() => setFotoSelecionada(null)} 
+          aoAlternarFavorito={aoAlternarFavorito}
+        />
+      <Rodape />
     </FundoGradiente>
   )
 }
