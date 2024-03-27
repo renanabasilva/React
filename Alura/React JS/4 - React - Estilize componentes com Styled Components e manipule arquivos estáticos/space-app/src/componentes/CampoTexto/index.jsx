@@ -32,7 +32,7 @@ const IconeLupa = styled.img`
 const CampoTexto = (props) => {
   return (
     <ContainerEstilizado>
-      <CampoTextoEstilizado placeholder="O que você procura?" {...props}/>
+      <CampoTextoEstilizado placeholder="O que você procura?" type="text" onChange={(texto) => props.aoFiltrar(texto.target.value)} />
       <IconeLupa src={search} alt="Ícone de lupa" />
     </ContainerEstilizado>
   )
