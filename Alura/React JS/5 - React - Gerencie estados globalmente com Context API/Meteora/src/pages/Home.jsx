@@ -9,15 +9,28 @@ import Categorias from "@/components/Categorias";
 import Facilidades from "@/components/Facilidades";
 import Novidades from "@/components/Novidades";
 
-const Home = () => {
+const Home = ({
+  carrinho,
+  adicionarProduto,
+  removerProduto,
+  removerProdutoCarrinho,
+  valorTotalCarrinho,
+  quantidadeProdutos,
+}) => {
   return (
     <>
-      <BarraNavegacao />
-      <CarrinhoSuspenso />
+      <BarraNavegacao quantidadeProdutos={quantidadeProdutos} />
+      <CarrinhoSuspenso
+        carrinho={carrinho}
+        adicionarProduto={adicionarProduto}
+        removerProduto={removerProduto}
+        removerProdutoCarrinho={removerProdutoCarrinho}
+        valorTotalCarrinho={valorTotalCarrinho}
+      />
       <main>
         <Carrossel />
         <Categorias />
-        <Produtos />
+        <Produtos adicionarProduto={adicionarProduto} />
         <Facilidades />
         <Novidades />
       </main>
