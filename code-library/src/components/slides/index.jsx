@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+const button = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:bg-blue-500";
 const slides = [
   {
     title: "Today's workout plan",
@@ -64,14 +65,15 @@ export default function Slides() {
     setCurrentSlide(slides[0]);
     setDisablePrev(true);
     setDisableRestart(true);
+    setDisableNext(false);
   };
 
   return (
     <>
       <div className="flex flex-row gap-5 items-center justify-center">
-        <button disabled={disableRestart} className="small" onClick={() => onClickRestart()}>Restart</button>
-        <button disabled={disablePrev} className="small" onClick={() => onClickPrev()}>Prev</button>
-        <button disabled={disableNext} className="small" onClick={() => onClickNext()}>Next</button>
+        <button disabled={disableRestart} className={button} onClick={() => onClickRestart()}>Restart</button>
+        <button disabled={disablePrev} className={button} onClick={() => onClickPrev()}>Prev</button>
+        <button disabled={disableNext} className={button} onClick={() => onClickNext()}>Next</button>
       </div>
       <div className="text-center">
         <h1>{currentSlide.title}</h1>
