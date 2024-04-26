@@ -3,17 +3,19 @@ import styles from "./Inicio.module.css";
 import Banner from "components/banner";
 import Card from "components/card";
 import Titulo from "components/titulo";
+import { useVideosContext } from "contextos/video";
 
 function Inicio() {
-  const [videos, setVideos] = useState([]);
+  // const [videos, setVideos] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://my-json-server.typicode.com/renanabasilva/cinetag-api/videos")
+  //     .then(resposta => resposta.json())
+  //     .then(dados => {
+  //       setVideos(dados)
+  //     })
+  // }, [])
 
-  useEffect(() => {
-    fetch("https://my-json-server.typicode.com/renanabasilva/cinetag-api/videos")
-      .then(resposta => resposta.json())
-      .then(dados => {
-        setVideos(dados)
-      })
-  }, [])
+  const { videos } = useVideosContext();
 
   return (
     <>
