@@ -14,6 +14,7 @@ function AppRoutes() {
           <Route path="favoritos" element={<Favoritos />} />
           <Route path=":id" element={<Player />} />
           <Route path="*" element={<NaoEncontrada />} />
+          <Route path="/404" element={<NaoEncontrada />} />
         </Route>
       </Routes>
     </BrowserRouter>
