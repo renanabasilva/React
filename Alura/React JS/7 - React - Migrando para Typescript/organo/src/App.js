@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner enderecoImagem='/imagens/banner.png' textoAlternativo='O banner principal da página do Organo'/>
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
       {times.map(time => <Time 
         key={time.nome} 
@@ -71,3 +71,7 @@ export default App;
 
 
 // <></> ou <Fragment></Fragment> É utilizado como maneira de encapsular o código sem ter de adicionar uma div
+
+//npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
+// npx tsc --init
