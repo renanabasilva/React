@@ -5,9 +5,9 @@ interface ColaboradorProps extends IColaborador{
   corDeFundo: string;
 }
 
-// interface ColaboradorProps {
+// interface ColaboradorProps {   // Neste tipo de solução, é preciso passar o "colaborador" apenas como prop no componente Time.
 //   colaborador: IColaborador;
-//   corPrimaria: string;
+//   corDeFundo: string;
 // }
 
 // interface ColaboradorProps {
