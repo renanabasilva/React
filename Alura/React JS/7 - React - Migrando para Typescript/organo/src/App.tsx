@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IColaborador } from './shared/interfaces/IColaborador';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
@@ -45,9 +46,9 @@ function App() {
     },
   ]
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([])    // Ao inicializar um estado com um array ou objeto vazio, é necessario tipar o estado.
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
+  const aoNovoColaboradorAdicionado = (colaborador: IColaborador) => {
     setColaboradores([...colaboradores, colaborador])
   }
 
@@ -62,7 +63,7 @@ function App() {
         corSecundaria={time.corSecundaria} 
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
-      <Rodape/>
+      <Rodape />
     </div>
   );
 }
