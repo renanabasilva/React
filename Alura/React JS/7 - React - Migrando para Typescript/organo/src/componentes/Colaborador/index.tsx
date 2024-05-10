@@ -3,6 +3,7 @@ import "./Colaborador.css"
 
 interface ColaboradorProps extends IColaborador{
   corDeFundo: string;
+  data: string;
 }
 
 // interface ColaboradorProps {   // Neste tipo de solução, é preciso passar o "colaborador" apenas como prop no componente Time.
@@ -17,7 +18,7 @@ interface ColaboradorProps extends IColaborador{
 //   corDeFundo:string;
 // }
 
-const Colaborador = ({nome, cargo, imagem, corDeFundo}: ColaboradorProps) => {
+const Colaborador = ({nome, cargo, imagem, corDeFundo, data}: ColaboradorProps) => {
   return (
     <div className="colaborador">
       <div className="cabecalho" style={{backgroundColor: corDeFundo}}>
@@ -26,6 +27,7 @@ const Colaborador = ({nome, cargo, imagem, corDeFundo}: ColaboradorProps) => {
       <div className="rodape">
         <h4>{nome}</h4>
         <h5>{cargo}</h5>
+        <h5>{new Date(data).toLocaleDateString()}</h5>
       </div>
     </div>
   )

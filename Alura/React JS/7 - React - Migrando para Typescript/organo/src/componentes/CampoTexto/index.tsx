@@ -6,9 +6,10 @@ interface CampoTextoProps {
   label: string;
   valor: string;
   obrigatorio?: boolean;
+  tipo?: 'text' | 'password' | 'date' | 'email' | 'number';
 }
 
-const CampoTexto = ({ aoAlterado, placeholder, label, valor, obrigatorio = false }: CampoTextoProps) => {
+const CampoTexto = ({ aoAlterado, placeholder, label, valor, obrigatorio = false, tipo = 'text' }: CampoTextoProps) => {
   const aoDigitado = (evento: React.ChangeEvent<HTMLInputElement>) => {
     aoAlterado(evento.target.value);
     // console.log(evento.target.value)
@@ -23,6 +24,7 @@ const CampoTexto = ({ aoAlterado, placeholder, label, valor, obrigatorio = false
         // onChange={evento => aoDigitado}    //Para verificar o tipo de elemento é a variável "evento"
         required={obrigatorio}
         placeholder={placeholder}
+        type={tipo}
       />
     </fieldset>
   );
