@@ -1,20 +1,7 @@
+import { ITarefa } from '../../types/tarefa';
 import Item from './Item';
 
-function Lista() {
-  const tarefas = [
-    {
-      tarefa: "React",
-      tempo: "02:00:00",
-    },
-    {
-      tarefa: "Javascript",
-      tempo: "01:00:00"
-    },
-    {
-      tarefa: "Typescript",
-      tempo: "00:30:00"
-    }
-  ];
+function Lista( {tarefas }: {tarefas:ITarefa[]}) {
   return (
     <aside className="listaTarefas">
       <h2>Estudos do dia</h2>
