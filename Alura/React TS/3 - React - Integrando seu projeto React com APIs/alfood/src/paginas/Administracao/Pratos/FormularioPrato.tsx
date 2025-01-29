@@ -63,43 +63,64 @@ const FormularioPrato = () => {
       formData.append('imagem', imagem)
     }
 
-    if (parametros.id) {
-      http.request({
-        url: `pratos/${parametros.id}/`,
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        data: formData
+    const url = parametros.id ? `pratos/${parametros.id}/` : 'pratos/'
+    const method = parametros.id ? 'PUT' : 'POST'
+
+    http.request({
+      url,
+      method,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      data: formData
+    })
+      .then(() => {
+        setDescricao('')
+        setNomePrato('')
+        setTag('')
+        setRestaurante('')
+        setImagem(null)
+        alert(`Prato ${parametros.id ? "alterado" : "cadastrado"} com suscesso!`)
       })
-        .then(() => {
-          setDescricao('')
-          setNomePrato('')
-          setTag('')
-          setRestaurante('')
-          setImagem(null)
-          alert('Prato alterado com suscesso!')
-        })
-        .catch(erro => console.log(erro))
-    } else {
-      http.request({
-        url: 'pratos/',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        data: formData
-      })
-        .then(() => {
-          setDescricao('')
-          setNomePrato('')
-          setTag('')
-          setRestaurante('')
-          setImagem(null)
-          alert('Prato cadastrado com suscesso!')
-        })
-        .catch(erro => console.log(erro))
-    }
+      .catch(erro => console.log(erro))
+
+    // if (parametros.id) {
+    //   http.request({
+    //     url: `pratos/${parametros.id}/`,
+    //     method: 'PUT',
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data'
+    //     },
+    //     data: formData
+    //   })
+    //     .then(() => {
+    //       setDescricao('')
+    //       setNomePrato('')
+    //       setTag('')
+    //       setRestaurante('')
+    //       setImagem(null)
+    //       alert('Prato alterado com suscesso!')
+    //     })
+    //     .catch(erro => console.log(erro))
+    // } else {
+    //   http.request({
+    //     url: 'pratos/',
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data'
+    //     },
+    //     data: formData
+    //   })
+    //     .then(() => {
+    //       setDescricao('')
+    //       setNomePrato('')
+    //       setTag('')
+    //       setRestaurante('')
+    //       setImagem(null)
+    //       alert('Prato cadastrado com suscesso!')
+    //     })
+    //     .catch(erro => console.log(erro))
+    // }
   };
 
   const selecionarArquivo = (evento: React.ChangeEvent<HTMLInputElement>) => {
